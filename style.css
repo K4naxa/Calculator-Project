@@ -1,0 +1,61 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 90vh;
+  font-size: 32px;
+}
+
+.frame {
+  border: 1px solid darkslategray;
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+  width: 400px;
+  padding: 15px;
+  background-color: lightgray;
+}
+.window {
+  width: 400px;
+  min-height: 150px;
+  border: 1px solid grey;
+  gap: 10px;
+  background-color: white;
+}
+
+.middle-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.middle-section > button {
+  font-size: 34px;
+  background-color: orange;
+}
+
+.numpad {
+  display: flex;
+  align-content: space-around;
+  justify-content: space-around;
+}
+.numbers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.functions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.numpad button {
+  font-size: 50px;
+  width: 65px;
+  height: 90px;
+}
+#sum {
+  width: 130px;
+}
