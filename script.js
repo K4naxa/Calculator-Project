@@ -1,6 +1,7 @@
 let windowValue;
 let snapshot;
-let func;
+let snapshot2;
+let operator;
 const calculations = document.getElementById("calculations");
 const userInput = document.getElementById("userInput");
 const Div = document.createElement("div");
@@ -40,26 +41,52 @@ multiply.onclick = (e) => addFunction("*");
 divide.onclick = (e) => addFunction("/");
 
 sum.onclick = () => calculationFunction();
+delBtn.onclick = () => clean();
 
+function clean() {
+  userInput.innerHTML = "";
+  snapshot = 0;
+}
 function addValue(value) {
   userInput.innerHTML += value;
 }
 
 function addFunction(type) {
-  snapshot = userInput.innerHTML;
+  snapshot = parseInt(userInput.innerHTML);
   console.log("snapshot is " + snapshot);
-  console.log("func is " + func);
   userInput.innerHTML = "";
-  func = type;
+  operator = type;
+  console.log("func is " + operator);
 }
 
 function calculationFunction() {
-  if (func == "+") window.innerHTML = snapshot + window.innerHTML;
-  else if (func == "-") window.innerHTML = snapshot - window.innerHTML;
-  else if (func == "*") window.innerHTML = snapshot * window.innerHTML;
-  else if (func == "/") window.innerHTML = snapshot / window.innerHTML;
-  else windows.innerHTML = "Error in calculation";
+  switch (operator) {
+    case "+":
+      userInput.innerHTML = snapshot + parseInt(userInput.innerHTML);
+      break;
+    case "-":
+      userInput.innerHTML = snapshot - parseInt(userInput.innerHTML);
+      break;
+    case "*":
+      userInput.innerHTML = snapshot * parseInt(userInput.innerHTML);
+      break;
+    case "/":
+      userInput.innerHTML = snapshot / parseInt(userInput.innerHTML);
+      break;
+
+    default:
+      userInput.innerHTML = "Error in the calculation Function";
+      break;
+  }
 }
+
+// function calculationFunction() {
+//   if (func == "+") userInput.innerHTML = snapshot + window.innerHTML;
+//   else if (func == "-") userInput.innerHTML = snapshot - window.innerHTML;
+//   else if (func == "*") userInput.innerHTML = snapshot * window.innerHTML;
+//   else if (func == "/") userInput.innerHTML = snapshot / window.innerHTML;
+//   else windows.innerHTML = "Error in calculation";
+// }
 
 // add sum button functionality
 // make "active" css class  to show with what functions is the calculation being done
