@@ -1,9 +1,9 @@
 let windowValue;
 let snapshot;
-let snapshot2;
 let operator;
 const calculations = document.getElementById("calculations");
 const userInput = document.getElementById("userInput");
+const snap = document.getElementById("snapshot");
 const Div = document.createElement("div");
 const delBtn = document.getElementById("delBtn");
 
@@ -53,13 +53,36 @@ function addValue(value) {
 
 function addFunction(type) {
   snapshot = parseInt(userInput.innerHTML);
-  console.log("snapshot is " + snapshot);
+  snap.innerHTML = snapshot;
   userInput.innerHTML = "";
   operator = type;
-  console.log("func is " + operator);
+
+  switch (operator) {
+    case "+":
+      add.classList.add("active");
+      break;
+    case "-":
+      subtract.classList.add("active");
+      break;
+    case "*":
+      multiply.classList.add("active");
+      break;
+    case "/":
+      divide.classList.add("active");
+      break;
+
+    default:
+      userInput.innerHTML = "Error in the activation";
+      break;
+  }
 }
 
 function calculationFunction() {
+  add.classList.remove("active");
+  subtract.classList.remove("active");
+  divide.classList.remove("active");
+  multiply.classList.remove("active");
+  snap.innerHTML = "";
   switch (operator) {
     case "+":
       userInput.innerHTML = snapshot + parseInt(userInput.innerHTML);

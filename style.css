@@ -24,7 +24,7 @@ body {
   background-color: white;
   padding: 10px;
 }
-#answer {
+#snapshot {
   color: darkgray;
 }
 
@@ -53,4 +53,8 @@ body {
   font-size: 36px;
   width: 70px;
   height: 60px;
+}
+
+.active {
+  background-color: lightcoral;
 }
