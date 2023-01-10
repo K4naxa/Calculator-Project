@@ -46,6 +46,9 @@ delBtn.onclick = () => clean();
 function clean() {
   userInput.innerHTML = "";
   snapshot = 0;
+  snap.innerHTML = "";
+  operator = "";
+  clearClass();
 }
 function addValue(value) {
   userInput.innerHTML += value;
@@ -78,10 +81,7 @@ function addFunction(type) {
 }
 
 function calculationFunction() {
-  add.classList.remove("active");
-  subtract.classList.remove("active");
-  divide.classList.remove("active");
-  multiply.classList.remove("active");
+  clearClass();
   snap.innerHTML = "";
   switch (operator) {
     case "+":
@@ -101,6 +101,13 @@ function calculationFunction() {
       userInput.innerHTML = "Error in the calculation Function";
       break;
   }
+}
+
+function clearClass() {
+  add.classList.remove("active");
+  subtract.classList.remove("active");
+  divide.classList.remove("active");
+  multiply.classList.remove("active");
 }
 
 // function calculationFunction() {
